@@ -1,8 +1,13 @@
 import React from 'react';
 import { MdHome, MdMusicNote, MdSportsSoccer, MdVideocam, MdLiveTv, MdWatchLater, MdSchool, MdLocalMovies, MdExplore, MdSettings, MdReport, MdHelp } from 'react-icons/md';
 import { FaYoutube, FaYoutubeSquare } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
+  const isMenuOpen=useSelector(store=>store.app.isMenuOpen); //SUBSCRIBING
+
+  if(!isMenuOpen) return null;
+
   return (
     <div className="p-5 shadow-lg w-48">
       <ul className="border-b border-gray-300 pb-4">

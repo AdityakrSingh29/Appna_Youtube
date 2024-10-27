@@ -1,12 +1,21 @@
 import React from 'react'
 import { IoSearchOutline } from "react-icons/io5";
+import { useDispatch } from 'react-redux';
+import {toggleMenu} from "../utils/appSlice";
 
 const Head = () => {
+
+  const dispatch=useDispatch();
+
+  const toggleMenuHandler=()=>{
+    dispatch(toggleMenu())
+  }
+
   return (
     <div className='grid grid-flow-col p-5 m-2 shadow-md'>
       {/* FIRST SECTION */}
       <div className='flex col-span-1 '>
-        <img  className="h-14" alt="menu" src="https://th.bing.com/th/id/OIP.K9-apaoP-DKq-8xpziKA_wHaHa?rs=1&pid=ImgDetMain"/>
+        <img  onClick={()=>toggleMenuHandler()} className="h-14 cursor-pointer" alt="menu" src="https://th.bing.com/th/id/OIP.K9-apaoP-DKq-8xpziKA_wHaHa?rs=1&pid=ImgDetMain"/>
         <img className="h-14" alt="youtube" src="https://th.bing.com/th/id/OIP.sCtdNjphAin-gugu0MNptAHaEK?rs=1&pid=ImgDetMain"/>
       </div>
 
