@@ -16,4 +16,10 @@ const VideoCard = ({info}) => {
   )
 }
 
+export const AdVideoCard=({info})=>{ //THIS IS HIGHER ORDER FN
+  return <div className='p-1 m-1 border border-black'>
+  <VideoCard info={info}/>
+  </div>
+}
+
 export default VideoCard

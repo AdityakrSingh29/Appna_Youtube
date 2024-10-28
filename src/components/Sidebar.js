@@ -2,6 +2,7 @@ import React from 'react';
 import { MdHome, MdMusicNote, MdSportsSoccer, MdVideocam, MdLiveTv, MdWatchLater, MdSchool, MdLocalMovies, MdExplore, MdSettings, MdReport, MdHelp } from 'react-icons/md';
 import { FaYoutube, FaYoutubeSquare } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const isMenuOpen=useSelector(store=>store.app.isMenuOpen); //SUBSCRIBING
@@ -11,7 +12,7 @@ const Sidebar = () => {
   return (
     <div className="p-5 shadow-lg w-48">
       <ul className="border-b border-gray-300 pb-4">
-        <li className="flex items-center"><MdHome className="mr-2" /> Home</li>
+        <li className="flex items-center"><MdHome className="mr-2" /> <Link to="/">Home</Link></li>
         <li className="flex items-center"><MdExplore className="mr-2" /> Shorts</li>
         <li className="flex items-center"><MdVideocam className="mr-2" /> Video</li>
         <li className="flex items-center"><MdLiveTv className="mr-2" /> Live</li>
